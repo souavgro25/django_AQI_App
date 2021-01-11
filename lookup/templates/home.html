@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   
+{% if api == "Error... " %}
+
+<div>
+<p>
+Error...
+</p></div>
+{% else %}
+
+<div class="card container-fluid {{color}}" style="width: 58rem;">
+  <div class="card-body">
+    <h5 class="card-title">Current AQI :{{api.0.AQI}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">ReportingArea :{{api.0.ReportingArea}}</h6>
+    <p class="card-text">ParameterName: {{api.0.ParameterName}}</p>
+    <p class="card-text">longitude: {{api.0.Longitude}}</p>
+    <p class="card-text">latitude: {{api.0.Latitude}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Category: {{api.0.Category.Name}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">DateObserved: {{api.0.DateObserved}}</h6>
+    
+    
+  </div>    
+</div>
+{% endif %}
+{% endblock  %} 
